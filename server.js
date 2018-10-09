@@ -62,3 +62,5 @@ app.listen(port ,() => {
 
 //id_rsa --Private key(DONT GIVE TO ANYONE)
 //id_rsa.pub - (GIven to github etc)
+//heroku create(remote is added)
+//git push heroku

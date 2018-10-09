@@ -1,0 +1,25 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "hbs": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paramvir109/web-server.git"
+  },
+  "author": "Paramvir Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paramvir109/web-server/issues"
+  },
+  "homepage": "https://github.com/Paramvir109/web-server#readme"
+}

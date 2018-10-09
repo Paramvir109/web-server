@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000; //Heroku sets an env key value pair for port(But not set when we run locally)
+
 //nodemon server.js -e js,hbs(AS by default it doesnt watch hbs files)
 var app = express();
 
@@ -15,12 +17,12 @@ app.use((req, res, next) => {//Takes only one function as arg(This is middleware
     `)
     next(); //Must provide this otherwise handler request wont be completed(Would seem cant connect to server)
 })
-app.use((req, res, next) => {
-        res.render('maintenance.hbs')//That's why no next(It stops execution of code below it)
-        //Only executes till this point  but (abc.txt) updated everytime on refreshing
-        //Order is important. static middleware(help page can be viewed) and maintenance middleware doesnt get a chance
-        //to be executed
-})
+// app.use((req, res, next) => {
+//         res.render('maintenance.hbs')//That's why no next(It stops execution of code below it)
+//         //Only executes till this point  but (abc.txt) updated everytime on refreshing
+//         //Order is important. static middleware(help page can be viewed) and maintenance middleware doesnt get a chance
+//         //to be executed
+// })
 
 hbs.registerHelper('currentYear' , () => {
     return new Date().getFullYear();
@@ -54,8 +56,8 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000 ,() => {
-    console.log('Server is up and running on 3000 port');
+app.listen(port ,() => {
+    console.log(`Server is up and running on ${port} port`);
 });//Never stops actually
 
 //id_rsa --Private key(DONT GIVE TO ANYONE)

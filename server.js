@@ -57,3 +57,6 @@ app.get('/bad', (req, res) => {
 app.listen(3000 ,() => {
     console.log('Server is up and running on 3000 port');
 });//Never stops actually
+
+//id_rsa --Private key(DONT GIVE TO ANYONE)
+//id_rsa.pub - (GIven to github etc)
